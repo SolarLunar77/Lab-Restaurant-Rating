@@ -7,14 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Restaurants")
+@Table(name="restaurants")
 public class Restaurant {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
 	String name;
-	String description;
-	Double price;
+	Double rating;
+	
 	public Long getId() {
 		return id;
 	}
@@ -27,35 +27,34 @@ public class Restaurant {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescription() {
-		return description;
+	public Double getRating() {
+		return rating;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setRating(Double rating) {
+		this.rating = rating;
 	}
-	public Double getPrice() {
-		return price;
-	}
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-	public Restaurant(Long id, String name, String description, Double price) {
+	public Restaurant(Long id, String name, Double rating) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.description = description;
-		this.price = price;
+		this.rating = rating;
 	}
 	public Restaurant() {
 		super();
 	}
-	
 	@Override
 	public String toString() {
-		return "Restaurant [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
+		return "Restaurant [id=" + id + ", name=" + name + ", rating=" + rating + "]";
 	}
 	
-
+	
+	
+	
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+	
+	
 	
 	
 	

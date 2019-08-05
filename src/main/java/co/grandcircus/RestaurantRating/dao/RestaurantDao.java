@@ -22,9 +22,9 @@ public class RestaurantDao {
 	EntityManager em;
 		
 	public List<Restaurant> findAll(){
-		return em.createQuery("FROM Restaurant", Restaurant.class)
+		List<Restaurant> restaurants = em.createQuery("FROM Restaurant", Restaurant.class)
 		.getResultList();
-		
+		return restaurants;
 	}
 	
 //	public List<Restaurant> findAll(){
